@@ -2,10 +2,11 @@ import Link from 'next/link'
 import React from 'react'
 import { FaAngleRight } from 'react-icons/fa6'
 import ProfileView from './components/ProfileView'
-
+import { _profileViewApiAction } from '@/actions/ProfileActions'
 
 
 export default async function page() {
+  const [profileData, ] = await Promise.all([_profileViewApiAction(), ]);
 
 
   return (
@@ -27,7 +28,7 @@ export default async function page() {
      </section>
 
      {/* LIST */}
-     <ProfileView />
+     <ProfileView dbData={profileData} />
 
 
     </div>

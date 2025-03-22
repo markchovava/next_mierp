@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 
 
 
-export default function ProfileView() {
-    const [data, setData] = useState({});
+export default function ProfileView({ dbData }) {
+    const [data, setData] = useState(dbData?.data ?? null);
 
   return (
     <>
@@ -25,42 +25,42 @@ export default function ProfileView() {
       {/*  */}
       <div className='w-[100%] mb-4 flex md:flex-row flex-col items-center justify-start gap-1'>
         <div className='md:w-[20%] w-[100%] font-light'>Name:</div>
-        <div className='md:w-[80%] w-[100%]'>N/A</div>
+        <div className='md:w-[80%] w-[100%]'>{data?.name ?? 'N/A'}</div>
       </div>
       {/*  */}
       <div className='w-[100%] mb-4 flex md:flex-row flex-col items-center justify-start gap-1'>
         <div className='md:w-[20%] w-[100%] font-light'>Email:</div>
-        <div className='md:w-[80%] w-[100%]'>N/A</div>
+        <div className='md:w-[80%] w-[100%]'>{data?.email ?? 'N/A'}</div>
       </div>
       {/*  */}
       <div className='w-[100%] mb-4 flex md:flex-row flex-col items-center justify-start gap-1'>
         <div className='md:w-[20%] w-[100%] font-light'>Role:</div>
-        <div className='md:w-[80%] w-[100%]'>N/A</div>
+        <div className='md:w-[80%] w-[100%]'>{data?.role?.name ?? 'N/A'}</div>
       </div>
       {/*  */}
       <div className='w-[100%] mb-4 flex md:flex-row flex-col items-center justify-start gap-1'>
         <div className='md:w-[20%] w-[100%] font-light'>Phone:</div>
-        <div className='md:w-[80%] w-[100%]'>N/A</div>
+        <div className='md:w-[80%] w-[100%]'>{data?.phone ?? 'N/A'}</div>
       </div>
       {/*  */}
       <div className='w-[100%] mb-4 flex md:flex-row flex-col items-center justify-start gap-1'>
         <div className='md:w-[20%] w-[100%] font-light'>Address:</div>
-        <div className='md:w-[80%] w-[100%]'>N/A</div>
+        <div className='md:w-[80%] w-[100%]'>{data?.address ?? 'N/A'}</div>
       </div>
       {/*  */}
       <div className='w-[100%] mb-4 flex md:flex-row flex-col items-center justify-start gap-1'>
         <div className='md:w-[20%] w-[100%] font-light'>Occupation:</div>
-        <div className='md:w-[80%] w-[100%]'>N/A</div>
+        <div className='md:w-[80%] w-[100%]'>{data?.occupation ?? 'N/A'}</div>
       </div>
       {/*  */}
       <div className='w-[100%] mb-4 flex md:flex-row flex-col items-center justify-start gap-1'>
         <div className='md:w-[20%] w-[100%] font-light'>Code:</div>
-        <div className='md:w-[80%] w-[100%]'>N/A</div>
+        <div className='md:w-[80%] w-[100%]'>{data?.code ?? 'N/A'}</div>
       </div>
       {/*  */}
       <div className='w-[100%] mb-4 flex md:flex-row flex-col items-center justify-start gap-1'>
         <div className='md:w-[20%] w-[100%] font-light'>Subsidiary:</div>
-        <div className='md:w-[80%] w-[100%]'>N/A</div>
+        <div className='md:w-[80%] w-[100%]'>{data?.subsidiary?.name ?? 'N/A'}</div>
       </div>
    
     </section>
