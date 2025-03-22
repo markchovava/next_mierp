@@ -11,7 +11,7 @@ import { TbCashRegister } from "react-icons/tb";
 import { MdBusinessCenter } from "react-icons/md";
 
 export default function MainArea({ dbData }) {
-  console.log('dbData', dbData);
+  // console.log('dbData', dbData);
   const [data, setData] = useState(dbData)
 
 
@@ -44,8 +44,9 @@ export default function MainArea({ dbData }) {
             <MdBusinessCenter className='text-[1.8rem]' />
           </div>
           <div className=''>
-            <span className='text-[2.3rem] tracking-wide font-extrabold leading-tight'>4</span>
-            <span className='ml-1 text-[1.4rem] font-light'>{data?.subsidiary_total ?? '0'}</span>
+            <span className='text-[2.3rem] tracking-wide font-extrabold leading-tight'>
+              {data?.subsidiary_total ?? '0'}</span>
+            <span className='ml-1 text-[1.4rem] font-light'>subsidiaries</span>
           </div>
         </div>
         </Link>
