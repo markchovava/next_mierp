@@ -100,10 +100,12 @@ export default function Header() {
                     <li className='text-slate-800 hover:text-black px-3 transition-all ease-in-out hover:bg-slate-50'>
                         <Link href="/client/app-info" className='flex justify-start gap-2 p-1 items-center text-sm'>
                             <span className='flex justify-center items-center bg-slate-800 px-1 rounded-full text-white'>0</span> 
-                            App Info</Link></li>
-                    <li className='text-slate-800 hover:text-black px-3 transition-all ease-in-out hover:bg-slate-50'>
+                            App Info</Link>
+                    </li>
+                   {/*  <li className='text-slate-800 hover:text-black px-3 transition-all ease-in-out hover:bg-slate-50'>
                         <Link href="/client/role" className='flex justify-start gap-2 p-1 items-center text-sm'>
-                            <BsPencilFill /> Roles</Link></li>
+                            <BsPencilFill /> Roles</Link>
+                    </li> */}
                 </ul>
                 }
               </li>
