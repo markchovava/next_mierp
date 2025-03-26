@@ -67,36 +67,6 @@ export default function SidebarNav() {
                     }
                 </AnimatePresence>
             </li>
-            {/* SUBSIDIARY */}
-            <li>
-                <motion.button 
-                    onClick={() => setIsActive({...isActive, two: !isActive.two })} 
-                    className={`w-[100%] flex items-center justify-between gap-2  ${isActive.two == true && 'font-semibold'}`}>
-                    <span>Subsidiaries</span>
-                    {isActive.two == true 
-                    ? <BiChevronUp className='text-lg' />
-                    : <BiChevronDown className='text-lg' /> }  
-                </motion.button>
-                <AnimatePresence>
-                    {isActive.two == true &&
-                    <motion.ul 
-                    variants={ulVariant} 
-                    initial='hidden'
-                    animate='visible'
-                    exit='hidden'
-                    className={`text-sm py-2 pl-4`}>
-                        <motion.li 
-                        variants={liVariant}
-                        initial='start'
-                        whileHover='animate'
-                        className={`py-1 `}>
-                            <Link href='/client/subsidiary'className={` flex items-center justify-start gap-1`}>
-                            <FaAngleRight /> Subsidiary List </Link>
-                        </motion.li>
-                    </motion.ul>
-                    }
-                </AnimatePresence>
-            </li>
             {/* PRODUCTS */}
             <li>
                 <motion.button 

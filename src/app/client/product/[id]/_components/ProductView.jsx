@@ -20,7 +20,7 @@ export default function ProductView({ id, dbData }) {
     </section>
 
     <section className='mx-auto w-[96%] bg-white drop-shadow-md px-6 py-6 mb-[4rem]'>
-      {/* PARENT / GUARDIAN */}
+      {/*  */}
       <div className='w-[100%] mb-4'>
           <h3 className='font-light text-[2.2rem] border-b border-gray-300'>
             View

@@ -17,8 +17,14 @@ export default function AppInfoView({ dbData }) {
       </Link> */}
     </section>
     
-    {/* FORM */}
+    {/*  */}
     <section className=' mb-[4rem] mx-auto w-[96%] bg-white drop-shadow-md px-6 py-8'>
+
+    <div className='w-[100%] mb-4'>
+        <h3 className='font-light text-[2.2rem] border-b border-gray-300'>
+          View
+        </h3>
+    </div>
     
     {/*  */}
     <div className='w-[100%] mb-4 flex md:flex-row flex-col items-center justify-start gap-1'>

@@ -83,6 +83,12 @@ export default function AppInfoEdit({ dbData }) {
       <form action={postData} onSubmit={() => setIsSubmit(true)}>
         {/*  */}
         <div className='w-[100%] mb-4'>
+          <h3 className='font-light text-[2.2rem] border-b border-gray-300'>
+            Edit
+          </h3>
+        </div>
+        {/*  */}
+        <div className='w-[100%] mb-4'>
           <label className='font-lg font-light block pb-1'>Name:</label>
           <input 
             type='text' 
