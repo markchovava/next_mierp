@@ -3,9 +3,20 @@ import React from 'react'
 import { FaAngleRight } from 'react-icons/fa6'
 import ProfileView from './components/ProfileView'
 import { _profileViewApiAction } from '@/actions/ProfileActions'
+import { _checkAdmin } from '@/cookies/AdminCookie'
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+import ClientRedirect from '@/app/_components/ClientRedirect'
+
+
 
 
 export default async function page() {
+  /* const cookieStore = await cookies();
+  const adminCookie = await cookieStore.get('MIERP_ADMIN_COOKIE');
+  if(!adminCookie?.value){ redirect('/login') }
+  if(adminCookie?.value != 'Yes'){ return <ClientRedirect /> } */
+  /*  */
   const [profileData, ] = await Promise.all([_profileViewApiAction(), ]);
 
 

@@ -150,9 +150,9 @@ export default function ExpenseList({ dbData }) {
                     <Link title='View' href={`/client/expense/${i?.id}`}> 
                     <FaEye className='hover:text-blue-500 duration-150 hover:scale-110 transition-all ease-in'/> 
                     </Link>
-                    <Link title='Edit' href={`/client/expense/edit/${i?.id}`}> 
+                   {/*  <Link title='Edit' href={`/client/expense/edit/${i?.id}`}> 
                     <MdEdit className='hover:text-green-500 duration-150 hover:scale-110 transition-all ease-in' /> 
-                    </Link>  
+                    </Link>   */}
                     <button 
                         onClick={() => deleteData(i?.id)} 
                         title='Delete'> 

@@ -3,11 +3,19 @@ import React from 'react'
 import { FaAngleRight } from 'react-icons/fa6'
 import RoleView from './_components/RoleView'
 import { _roleViewApiAction } from '@/actions/RoleActions'
-
+import { _checkAdmin } from '@/actions/DashboardActions'
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+import ClientRedirect from '@/app/_components/ClientRedirect'
 
 
 
 export default async function page({ params: {id} }) {
+  const cookieStore = await cookies();
+  const adminCookie = await cookieStore.get('MIERP_ADMIN_COOKIE');
+  if(!adminCookie?.value){ redirect('/login') }
+  if(adminCookie?.value != 'Yes'){ return <ClientRedirect /> }
+  /*  */
   const [roleData, ] = await Promise.all([_roleViewApiAction(id), ])
 
 

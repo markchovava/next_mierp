@@ -1,12 +1,16 @@
 "use client";
-import { baseURL } from '@/api/baseURL';
+import { _profileUpdateApiAction } from '@/actions/ProfileActions';
+import { reactToastifyDark } from '@/utils/reactToastify';
 import Link from 'next/link'
-import React, { useState, useTransition } from 'react'
+import { useRouter } from 'next/navigation';
+import React, { useState } from 'react'
 import { FaArrowRightLong } from 'react-icons/fa6'
+import { toast } from 'react-toastify';
 
 
 
 export default function ProfileEdit({dbData}) {
+    const router = useRouter();
     const [errMsg, setErrMsg] = useState({});
     const [isSubmit, setIsSubmit] = useState(false)
     const [data, setData] = useState(dbData?.data);
@@ -51,11 +55,13 @@ export default function ProfileEdit({dbData}) {
             if(res?.status == 1) {
                 setErrMsg({});
                 toast.success(res?.message, reactToastifyDark);
-                router.push(`/client/profile`)
+                router.push(`/admin/profile`);
+                setIsSubmit(false);
                 return;
             }
             } catch (error) {
                 console.error(`Error: ${error}`);
+                setIsSubmit(false);
         }
     }
 
@@ -101,8 +107,7 @@ export default function ProfileEdit({dbData}) {
                     { errMsg?.email && 
                         <p className='text-sm text-red-600'>{errMsg?.email}</p> }
                 </div>
-            </div>
-           
+            </div>   
             {/*  */}
             <div className='w-[100%] font-light mb-4'>
                 <p className='mb-2'>Phone:</p>
@@ -114,7 +119,7 @@ export default function ProfileEdit({dbData}) {
                 placeholder='Enter the Phone here...'
                 className='transition-all ease-in-out border border-slate-300 px-3 py-3 hover:border-slate-600 w-[100%] outline-none rounded-xl' />
                 { errMsg?.phone && 
-                        <p className='text-sm text-red-600'>{errMsg?.phone}</p> }
+                    <p className='text-sm text-red-600'>{errMsg?.phone}</p> }
             </div>
             {/*  */}
             <div className='w-[100%] font-light mb-4'>
@@ -135,7 +140,7 @@ export default function ProfileEdit({dbData}) {
                 name='position'
                 value={data?.position}
                 onChange={handleInput}
-                placeholder='Enter the Address here...'
+                placeholder='Enter the Position here...'
                 className='transition-all ease-in-out border border-slate-300 px-3 py-3 hover:border-slate-600 w-[100%] outline-none rounded-xl' />
             </div>
     

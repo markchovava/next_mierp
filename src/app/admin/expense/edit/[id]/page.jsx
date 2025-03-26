@@ -3,12 +3,21 @@ import ExpenseEdit from './components/ExpenseEdit'
 import Link from 'next/link'
 import { FaAngleRight } from 'react-icons/fa6'
 import { _expenseViewApiAction } from '@/actions/ExpenseActions'
+import { _checkAdmin } from '@/cookies/AdminCookie'
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+import ClientRedirect from '@/app/_components/ClientRedirect'
 
 
 
 
 
 export default async function page({params: {id} }) {
+  const cookieStore = await cookies();
+  const adminCookie = await cookieStore.get('MIERP_ADMIN_COOKIE');
+  if(!adminCookie?.value){ redirect('/login') }
+  if(adminCookie?.value != 'Yes'){ return <ClientRedirect /> }
+  /*  */
   const [expenseData, ] = await Promise.all([_expenseViewApiAction(id), ])
 
 

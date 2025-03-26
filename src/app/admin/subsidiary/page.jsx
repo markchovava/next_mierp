@@ -3,10 +3,19 @@ import React from 'react'
 import { FaAngleRight } from 'react-icons/fa6'
 import SubsidiaryList from './_components/SubsidiaryList'
 import { _subsidiaryListApiAction } from '@/actions/SubsidiaryActions'
+import { _checkAdmin } from '@/cookies/AdminCookie'
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+import ClientRedirect from '@/app/_components/ClientRedirect'
 
 
 
 export default async function page() {
+  const cookieStore = await cookies();
+  const adminCookie = await cookieStore.get('MIERP_ADMIN_COOKIE');
+  if(!adminCookie?.value){ redirect('/login') }
+  if(adminCookie?.value != 'Yes'){ return <ClientRedirect /> }
+  /*  */
   const [subsidiariesData, ] = await Promise.all([_subsidiaryListApiAction(), ])
 
   return (

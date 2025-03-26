@@ -164,10 +164,10 @@ export default function SalesList({dbData, productsData}) {
                 {/* <Link title='Edit' href={`/client/subsidiary/edit/${i?.id}`}> 
                   <MdEdit className='hover:text-green-500 duration-150 hover:scale-110 transition-all ease-in' /> 
                 </Link>   */}
-                <button onClick={() => deleteData(i?.id)} title='Delete'> 
+                {<button onClick={() => deleteData(i?.id)} title='Delete'> 
                     <MdDeleteForever 
                       className='hover:text-red-500 duration-150 hover:scale-110 transition-all ease-in' /> 
-                </button>
+                </button>}
                 
               </div>
             </div>

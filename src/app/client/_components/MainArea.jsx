@@ -15,9 +15,10 @@ export default function MainArea({ dbData }) {
   return (
     <>
     
-    <section className='px-8 pt-8 pb-12 grid grid-cols-4 gap-6'>
+    <section className='px-8 pt-8 pb-12 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6'>
         
         {/* USER COL */}
+        <Link href='/client/user'>
         <div className='text-blue-950 border rounded-2xl cursor-pointer border-blue-100 transition-all ease-in-out duration-100 hover:drop-shadow-md bg-white py-6 px-4 flex flex-col items-start justify-center gap-3'>
           <div className='w-[100%] flex items-center justify-between '>
             <h3 className='leading-tight text-2xl font-light'>Total Users</h3>
@@ -28,8 +29,10 @@ export default function MainArea({ dbData }) {
             <span className='ml-1 text-[1.4rem] font-light'>people</span>
           </div>
         </div>
+        </Link>
 
         {/* PRODUCT COL */}
+        <Link href='/client/product'>
         <div className='text-blue-950 border rounded-2xl cursor-pointer border-blue-100 transition-all ease-in-out duration-100 hover:drop-shadow-md bg-white py-6 px-4 flex flex-col items-start justify-center gap-3'>
           <div className='w-[100%] flex items-center justify-between '>
             <h3 className='leading-tight text-2xl font-light'>Total Products</h3>
@@ -40,8 +43,10 @@ export default function MainArea({ dbData }) {
             <span className='ml-1 text-[1.4rem] font-light'>products</span>
           </div>
         </div>
+        </Link>
 
         {/* SALES COL */}
+        <Link href='/client/sales'>
         <div className='text-blue-950 border rounded-2xl cursor-pointer border-blue-100 transition-all ease-in-out duration-100 hover:drop-shadow-md bg-white py-6 px-4 flex flex-col items-start justify-center gap-3'>
           <div className='w-[100%] flex items-center justify-between '>
             <h3 className='leading-tight text-2xl font-light'>Sales</h3>
@@ -52,8 +57,10 @@ export default function MainArea({ dbData }) {
             <span className='ml-1 text-[1.4rem] font-light'></span>
           </div>
         </div>
+        </Link>
 
         {/* PURCHASES COL */}
+        <Link href='/client/purchase'>
         <div className='text-blue-950 border rounded-2xl cursor-pointer border-blue-100 transition-all ease-in-out duration-100 hover:drop-shadow-md bg-white py-6 px-4 flex flex-col items-start justify-center gap-3'>
           <div className='w-[100%] flex items-center justify-between '>
             <h3 className='leading-tight text-2xl font-light'>Purchases</h3>
@@ -64,8 +71,10 @@ export default function MainArea({ dbData }) {
             <span className='ml-1 text-[1.4rem] font-light'></span>
           </div>
         </div>
+        </Link>
 
         {/* EXPENSES COL */}
+        <Link href='/client/expense'>
         <div className='text-blue-950 border rounded-2xl cursor-pointer border-blue-100 transition-all ease-in-out duration-100 hover:drop-shadow-md bg-white py-6 px-4 flex flex-col items-start justify-center gap-3'>
           <div className='w-[100%] flex items-center justify-between '>
             <h3 className='leading-tight text-2xl font-light'>Expenses</h3>
@@ -77,6 +86,7 @@ export default function MainArea({ dbData }) {
             <span className='ml-1 text-[1.4rem] font-light'></span>
           </div>
         </div>
+        </Link>
 
         {/* REVENUES COL */}
        {/*  <div className='text-blue-950 border rounded-2xl cursor-pointer border-blue-100 transition-all ease-in-out duration-100 hover:drop-shadow-md bg-white py-6 px-4 flex flex-col items-start justify-center gap-3'>

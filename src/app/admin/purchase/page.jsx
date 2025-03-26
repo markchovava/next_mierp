@@ -4,11 +4,22 @@ import { FaAngleRight } from 'react-icons/fa6'
 import PurchaseList from './_components/PurchaseList'
 import { _purchaseListApiAction } from '@/actions/PurchaseActions'
 import { _productByAuthSubsidiaryApiAction } from '@/actions/ProductActions'
+import { _checkAdmin } from '@/cookies/AdminCookie'
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+import ClientRedirect from '@/app/_components/ClientRedirect'
+
 
 
 
 export default async function page() {
-   const [purchaseData, productsData] = await Promise.all([_purchaseListApiAction(), _productByAuthSubsidiaryApiAction()])
+  const cookieStore = await cookies();
+  const adminCookie = await cookieStore.get('MIERP_ADMIN_COOKIE');
+  if(!adminCookie?.value){ redirect('/login') }
+  if(adminCookie?.value != 'Yes'){ return <ClientRedirect /> }
+  /*  */
+  const [purchaseData, productsData] = await Promise.all([
+    _purchaseListApiAction(), _productByAuthSubsidiaryApiAction()])
 
   return (
     <>

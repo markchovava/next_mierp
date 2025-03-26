@@ -3,11 +3,20 @@ import AppInfoEdit from './components/AppInfoEdit'
 import { FaAngleRight } from 'react-icons/fa6'
 import Link from 'next/link'
 import { _appInfoViewApiAction } from '@/actions/AppInfoActions'
+import { _checkAdmin } from '@/cookies/AdminCookie'
+import { cookies } from 'next/headers'
+import ClientRedirect from '@/app/_components/ClientRedirect'
+import { redirect } from 'next/navigation'
 
 
 
 export default async function page() {
-   const [appInfoData] = await Promise.all([ _appInfoViewApiAction(), ])
+  const cookieStore = await cookies();
+  const adminCookie = await cookieStore.get('MIERP_ADMIN_COOKIE');
+  if(!adminCookie?.value){ redirect('/login') }
+  if(adminCookie?.value != 'Yes'){ return <ClientRedirect /> }
+  /*  */
+  const [appInfoData] = await Promise.all([ _appInfoViewApiAction(), ])
 
 
   return (

@@ -9,18 +9,22 @@ import { BiSolidPurchaseTag } from "react-icons/bi";
 import { GiExpense } from "react-icons/gi";
 import { TbCashRegister } from "react-icons/tb";
 import { MdBusinessCenter } from "react-icons/md";
+import { getCookie } from 'cookies-next';
+import { _checkAdmin } from '@/cookies/AdminCookie';
 
-export default function MainArea({ dbData }) {
-  // console.log('dbData', dbData);
+
+
+
+
+export default async function MainArea({ dbData }) {
+  await _checkAdmin();
   const [data, setData] = useState(dbData)
 
-
-  
 
   return (
     <>
     
-    <section className='px-8 pt-8 pb-12 grid grid-cols-4 gap-6'>
+    <section className='px-8 pt-8 pb-12 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6'>
         
         {/* USER COL */}
         <Link href='/admin/user'>

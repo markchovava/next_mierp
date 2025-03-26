@@ -5,10 +5,19 @@ import UserList from './_components/UserList'
 import { _userListApiAction } from '@/actions/UserActions'
 import { _subsidiaryListAllApiAction } from '@/actions/SubsidiaryActions'
 import { _roleListAllApiAction } from '@/actions/RoleActions'
+import { _checkAdmin } from '@/cookies/AdminCookie'
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+import ClientRedirect from '@/app/_components/ClientRedirect'
 
 
 
 export default async function page() {
+  const cookieStore = await cookies();
+  const adminCookie = await cookieStore.get('MIERP_ADMIN_COOKIE');
+  if(!adminCookie?.value){ redirect('/login') }
+  if(adminCookie?.value != 'Yes'){ return <ClientRedirect /> }
+  /*  */
   const [usersData, subsidiaryData, roleData ] = await Promise.all([
     _userListApiAction(), 
     _subsidiaryListAllApiAction(), 
