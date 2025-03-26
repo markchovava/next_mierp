@@ -74,8 +74,12 @@ export default function Login() {
                         router.push('/admin');
                         return
                     } 
+                    else if(res?.data?.is_admin == 'No'){
+                        router.push('/client');
+                        return
+                    } 
                 }
-                router.push('/client');
+                toast.success('Something went wrong. Please try again', reactToastifyDark);
                 return;
             }
             if(res.status == 2) {

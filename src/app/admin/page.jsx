@@ -12,8 +12,8 @@ import ClientRedirect from '../_components/ClientRedirect';
 export default async function page() {
   const cookieStore = await cookies();
   const adminCookie = await cookieStore.get('MIERP_ADMIN_COOKIE');
-  if(!adminCookie){ redirect('/login') }
-  if(adminCookie != 'Yes'){ return <ClientRedirect /> }
+  if(!adminCookie?.value){ redirect('/login') }
+  if(adminCookie?.value != 'Yes'){ return <ClientRedirect /> }
 
   const [totalsData, ] = await Promise.all([ _adminTotalsApiAction(), ])
 

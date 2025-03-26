@@ -17,7 +17,6 @@ import { _checkAdmin } from '@/cookies/AdminCookie';
 
 
 export default async function MainArea({ dbData }) {
-  await _checkAdmin();
   const [data, setData] = useState(dbData)
 
 
