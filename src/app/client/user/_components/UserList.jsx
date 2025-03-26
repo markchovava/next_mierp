@@ -16,13 +16,11 @@ import { _userBySubsidiaryApiAction, _userDeleteApiAction, _userListApiAction, _
 
 
 
-export default function UserList({ dbData, subsidiaryData, roleData }) {
-  console.log(dbData, dbData)
+export default function UserList({ dbData, roleData }) {
   const {userState, userDispatch } = AdminContextState()
   const [isModal, setIsModal] = useState(false)
   const [search, setSearch] = useState('');
   const [isSearch, setIsSearch] = useState(false);
-  const [subsidiaries, setSubsidiaries] = useState(subsidiaryData?.data)
   const [roles, setRoles] = useState(roleData?.data)
   
   useEffect(() => {
@@ -211,7 +209,6 @@ export default function UserList({ dbData, subsidiaryData, roleData }) {
         isModal={isModal} 
         setIsModal={setIsModal} 
         getData={getData}
-        subsidiaries={subsidiaries}
         roles={roles}
       />
 

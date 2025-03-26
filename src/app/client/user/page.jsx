@@ -9,9 +9,8 @@ import { _roleListAllApiAction } from '@/actions/RoleActions'
 
 
 export default async function page() {
-  const [usersData, subsidiaryData, roleData ] = await Promise.all([
+  const [usersData, roleData ] = await Promise.all([
     _userBySubsidiaryApiAction(), 
-    _subsidiaryListAllApiAction(), 
     _roleListAllApiAction(),
   ]) 
 
@@ -37,7 +36,6 @@ export default async function page() {
     {/* LIST */}
     <UserList 
       dbData={usersData} 
-      subsidiaryData={subsidiaryData} 
       roleData={roleData} 
     />
 

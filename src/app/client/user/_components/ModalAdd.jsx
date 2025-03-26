@@ -17,7 +17,7 @@ const contentVariant = {
             duration: 1, }},
 }
 
-export default function ModalAdd({isModal, setIsModal, getData, roles, subsidiaries}) {
+export default function ModalAdd({isModal, setIsModal, getData, roles}) {
     const subsidiary_id = getCookie('MIERP_SUBSIDIARY_COOKIE')
     const [isSubmit, setIsSubmit] = useState(false)
     const [errMsg, setErrMsg] = useState({});
@@ -140,44 +140,25 @@ export default function ModalAdd({isModal, setIsModal, getData, roles, subsidiar
                         <p className='text-sm text-red-600'>{errMsg?.email}</p>}
                     </div>
                 </div>
-                {/*  */}
-                <div className='w-[100%] mb-4 grid lg:grid-cols-2 grid-cols-1 gap-4'>
-                    {roles &&
-                    <div className='w-[100%]'>
-                        <p className='mb-2 font-light'>Role:</p>
-                        <select 
-                            name='role_level'
-                            value={data?.role_level}
-                            onChange={handleInput}
-                            placeholder='Enter Phone Number here...'
-                            className='transition-all ease-in-out border border-slate-300 px-3 py-3 hover:border-slate-600 w-[100%] outline-none rounded-xl'>
-                            <option value=''>Select an option</option>
-                            {roles?.length > 0 &&
-                            roles?.map((i, key) => (
-                                <option key={key} value={i?.level}>{i?.name}</option>
-                            ))
-                            }
-                        </select>
-                    </div>
-                    }
-                    {subsidiaries &&
-                    <div className='w-[100%]'>
-                        <p className='mb-2 font-light'>Subsidiary:</p>
-                        <select 
-                            name='subsidiary_id'
-                            value={data?.subsidiary_id}
-                            onChange={handleInput}
-                            className='transition-all ease-in-out border border-slate-300 px-3 py-3 hover:border-slate-600 w-[100%] outline-none rounded-xl'>
-                            <option value=''>Select an option</option>
-                            {subsidiaries.length > 0 &&
-                            subsidiaries.map((i, key) => (
-                                <option key={key} value={i?.id}>{i?.name}</option>
-                            ))
-                            }
-                        </select>
-                    </div>
-                    }
+                {/* ROLE */}
+                {roles &&
+                <div className='w-[100%] mb-4'>
+                    <p className='mb-2 font-light'>Role:</p>
+                    <select 
+                        name='role_level'
+                        value={data?.role_level}
+                        onChange={handleInput}
+                        placeholder='Enter Phone Number here...'
+                        className='transition-all ease-in-out border border-slate-300 px-3 py-3 hover:border-slate-600 w-[100%] outline-none rounded-xl'>
+                        <option value=''>Select an option</option>
+                        {roles?.length > 0 &&
+                        roles?.map((i, key) => (
+                            <option key={key} value={i?.level}>{i?.name}</option>
+                        ))
+                        }
+                    </select>
                 </div>
+                }
                 {/*  */}
                 <div className='w-[100%] font-light mb-4'>
                     <p className='mb-2'>Position:</p>
