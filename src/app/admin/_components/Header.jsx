@@ -16,7 +16,7 @@ import { cookieRoleClient } from '@/cookies/cookieRoleClient'
 import { useRouter } from 'next/navigation'
 import { cookieAdminClient } from '@/cookies/cookieAdminClient'
 import { cookieSubsidiaryClient } from '@/cookies/cookieSubsidiaryClient'
-
+import { PiPasswordBold } from "react-icons/pi";
 
 
 export default function Header() {
@@ -122,6 +122,9 @@ export default function Header() {
                       <li className='text-slate-800 hover:text-black px-3 hover:bg-slate-50'>
                           <Link href="/admin/profile" className='flex justify-start gap-2 p-1 items-center text-sm'>
                               <FaUser /> My Profile</Link></li>
+                      <li className='text-slate-800 hover:text-black px-3 hover:bg-slate-50'>
+                          <Link href="/admin/password" className='flex justify-start gap-2 p-1 items-center text-sm'>
+                              <PiPasswordBold /> Password</Link></li>
                      {/*  <li className='text-slate-800 hover:text-black px-3 hover:bg-slate-50'>
                           <Link href="/admin/password" className='flex justify-start gap-2 p-1 items-center text-sm'>
                               <RiLockPasswordFill /> Reset Password</Link></li> */}

@@ -34,6 +34,8 @@ export async function registerAction(data) {
 
 
 /*  */
+
+
 export async function _logoutAction() {
   const cookieStore = await cookies()
   const authToken = await cookieStore.get('MIERP_AUTH_COOKIE');
@@ -48,5 +50,4 @@ export async function _logoutAction() {
   });
   revalidatePath('/login');
   return await res.json();
-
 }
