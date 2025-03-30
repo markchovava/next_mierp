@@ -12,11 +12,7 @@ import PasswordEdit from './_components/PasswordEdit'
 
 
 export default async function page() {
-  const cookieStore = await cookies();
-  const clientCookie = await cookieStore.get('MIERP_ADMIN_COOKIE');
-  if(!clientCookie?.value){ redirect('/login') }
-  if(clientCookie?.value != 'Yes'){ return <ClientRedirect /> } 
-
+  
 
   return (
     <>
