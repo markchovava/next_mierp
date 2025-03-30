@@ -5,7 +5,7 @@ import Login from './components/Login'
 
 export default function page() {
   return (
-    <div className='w-[100%] min-h-screen bg-slate-200'>
+    <div className='w-[100%] min-h-screen bg-gray-100'>
         <Login />
     </div>
   )
