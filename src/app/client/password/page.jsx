@@ -3,9 +3,6 @@ import React from 'react'
 import { FaAngleRight } from 'react-icons/fa6'
 import { _profileViewApiAction } from '@/actions/ProfileActions'
 import { _checkAdmin } from '@/cookies/AdminCookie'
-import { cookies } from 'next/headers'
-import { redirect } from 'next/navigation'
-import ClientRedirect from '@/app/_components/ClientRedirect'
 import PasswordEdit from './_components/PasswordEdit'
 
 

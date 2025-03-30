@@ -124,7 +124,8 @@ export default function Header() {
                               <FaUser /> My Profile</Link></li>
                       <li className='text-slate-800 hover:text-black px-3 hover:bg-slate-50'>
                           <Link href="/admin/password" className='flex justify-start gap-2 p-1 items-center text-sm'>
-                              <PiPasswordBold /> Password</Link></li>
+                              <PiPasswordBold /> Password</Link>
+                      </li>
                      {/*  <li className='text-slate-800 hover:text-black px-3 hover:bg-slate-50'>
                           <Link href="/admin/password" className='flex justify-start gap-2 p-1 items-center text-sm'>
                               <RiLockPasswordFill /> Reset Password</Link></li> */}
